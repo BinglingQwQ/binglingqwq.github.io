@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>【题解】 AT_abc220_b [ABC220B] Base K</title>
+    <link href="/2023/10/05/%E9%A2%98%E8%A7%A3-AT-abc220-b-ABC220B-Base-K/"/>
+    <url>/2023/10/05/%E9%A2%98%E8%A7%A3-AT-abc220-b-ABC220B-Base-K/</url>
+    
+    <content type="html"><![CDATA[<h2 id="题目传送门："><a href="#题目传送门：" class="headerlink" title="题目传送门："></a>题目传送门：</h2><ol><li><p><a href="https://atcoder.jp/contests/abc220/tasks/abc220_b" title="AtCoder">AtCoder</a></p></li><li><p><a href="https://www.luogu.com.cn/problem/AT_abc220_b" title="洛谷">洛谷</a></p></li></ol><h2 id="基本思路"><a href="#基本思路" class="headerlink" title="基本思路"></a>基本思路</h2><p>给出两个 $K$ 进制数 $A,B$，要求 $A \times B$ 在十进制下的值。</p><p>我们很容易想到把 $A$ 和 $B$ 都转化为十进制数，再相乘。</p><h2 id="text-注意！"><a href="#text-注意！" class="headerlink" title="$\text{注意！}$"></a>$\text{注意！}$</h2><p>$A,B$ 都是 $K$ 进制数，不是 $10$ 进制整数，不能用 <code>int</code> 输入，要用 <code>string</code>。</p><h2 id="AC代码："><a href="#AC代码：" class="headerlink" title="AC代码："></a>AC代码：</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span><span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">s</span><span class="hljs-params">(string x,<span class="hljs-type">int</span> k)</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> res=<span class="hljs-number">1</span>,ans=<span class="hljs-number">0</span>,si=x.<span class="hljs-built_in">size</span>();<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=si<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;i--)<br>&#123;<br>ans+=(x[i]-<span class="hljs-string">&#x27;0&#x27;</span>)*res;<br>res*=k;<br>&#125;<br><span class="hljs-keyword">return</span> ans;<br>&#125;<br><span class="hljs-type">long</span> <span class="hljs-type">long</span> k,ans;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>string a,b;<br>cin&gt;&gt;k&gt;&gt;a&gt;&gt;b;<br>ans=<span class="hljs-built_in">s</span>(a,k)*<span class="hljs-built_in">s</span>(b,k);<br>cout&lt;&lt;ans&lt;&lt;<span class="hljs-string">&#x27;\n&#x27;</span>;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure><p>代码已<a href="https://atcoder.jp/contests/abc220/submissions/45278574">AC</a>，可放心食用。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>C++编程</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>题解</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2023/10/02/hello-world/"/>
     <url>/2023/10/02/hello-world/</url>
