@@ -35,6 +35,8 @@
 <meta name="twitter:image" content="https://pic2.zhimg.com/80/v2-7d8b10608de25181e9ab19e463056f91_720w.webp">
   
   
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
   
   <title>Hexo 博客搭建和使用教程(Windows) - 冰灵的笔记本</title>
 
@@ -129,11 +131,39 @@
           
           
           
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/" target="_self">
-                <i class="iconfont icon-archive-fill"></i>
-                <span>归档</span>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
+                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="iconfont icon-book"></i>
+                <span>文章</span>
               </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/archives/" target="_self">
+                    <i class="iconfont icon-archive-fill"></i>
+                    <span>归档</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/categories/" target="_self">
+                    <i class="iconfont icon-category-fill"></i>
+                    <span>分类</span>
+                  </a>
+                
+                  
+                  
+                  
+                  <a class="dropdown-item" href="/tags/" target="_self">
+                    <i class="iconfont icon-tags-fill"></i>
+                    <span>标签</span>
+                  </a>
+                
+              </div>
             </li>
           
         
@@ -142,21 +172,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/categories/" target="_self">
-                <i class="iconfont icon-category-fill"></i>
-                <span>分类</span>
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/" target="_self">
-                <i class="iconfont icon-tags-fill"></i>
-                <span>标签</span>
+              <a class="nav-link" href="/remark/" target="_self">
+                <i class="iconfont icon-comment"></i>
+                <span>留言板</span>
               </a>
             </li>
           
@@ -192,7 +210,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" target="_self" href="javascript:;" role="button"
                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="iconfont icon-books"></i>
+                <i class="iconfont icon-bookmark"></i>
                 <span>更多</span>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -300,6 +318,14 @@
 
     
     
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
   </div>
 
 
@@ -362,11 +388,11 @@
 <p>3、生成了一个新的 C:\Users\您的用户名\ .ssh文件夹，打开这个文件夹，找到 .ssh\id_rsa.pub 文件，记事本打开并复制里面的内容</p>
 <p>4、打开您的 github 主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key，把复制的内容粘贴进去，title 随便填，保存即可，我们的公钥就添加成功了，设置好如下图:</p>
 <p>5、检测是否设置成功:</p>
-<p>输入命令: ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#x74;&#x40;&#103;&#105;&#x74;&#104;&#117;&#x62;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>输入命令: ssh -T <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#x74;&#104;&#117;&#x62;&#46;&#99;&#111;&#x6d;</a></p>
 <p>看到以上信息说明 SSH 已配置成功!</p>
 <p>6、此外您还需要如下配置:</p>
 <p>命令: git config –global user.name “您的 Github username” &#x2F;&#x2F; 注意是 username, 而非昵称</p>
-<p>命令: git config –global user.email “<a href="mailto:&#120;&#120;&#x78;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;">&#120;&#120;&#x78;&#64;&#113;&#113;&#46;&#x63;&#111;&#109;</a>“ &#x2F;&#x2F; 填写您的 github 注册邮箱</p>
+<p>命令: git config –global user.email “<a href="mailto:&#120;&#120;&#120;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;">&#120;&#120;&#120;&#64;&#x71;&#113;&#46;&#x63;&#x6f;&#x6d;</a>“ &#x2F;&#x2F; 填写您的 github 注册邮箱</p>
 <p>至此，您已经成功配置好了 Github，接下来开始搭建个人博客吧!</p>
 <h2 id="第四章-使用-Hexo-搭建博客"><a href="#第四章-使用-Hexo-搭建博客" class="headerlink" title="第四章 使用 Hexo 搭建博客"></a>第四章 使用 Hexo 搭建博客</h2><h3 id="4-1-初始化"><a href="#4-1-初始化" class="headerlink" title="4.1 初始化"></a>4.1 初始化</h3><p>1、在电脑的某个磁盘或路径新建一个名为 hexo 的文件夹(名字可以随便取)，比如我的是 D:\hexo，由于这个文件夹将来就作为您存放代码的地方，所以最好不要随便放</p>
 <p>2、在 D:\hexo 文件夹下右键打开 Git Bash Here，输入命令: hexo init 进行初始化</p>
@@ -663,6 +689,30 @@
     </div>
   
   
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
   
     <!-- 备案信息 ICP for China -->
     <div class="beian">
@@ -862,6 +912,8 @@
   <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
